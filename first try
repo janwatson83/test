@@ -1,0 +1,26 @@
+# File: app.py
+from flask import Flask, render_template
+
+app = Flask(__name__)
+
+@app.route('/')
+def home():
+    return render_template('index.html', title='Crypto Website', content='Welcome to our cryptocurrency website!')
+
+if __name__ == '__main__':
+    app.run(debug=True)
+html
+Copy code
+<!-- File: templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <h1>{{ title }}</h1>
+    <p>{{ content }}</p>
+</body>
+</html>
